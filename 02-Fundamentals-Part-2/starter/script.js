@@ -39,3 +39,19 @@ const calcAge2 = function (birthYear) {		// anonymous function
 	return 2022 - birthYear;
 }
 calcAge2(1998);
+
+
+
+
+// >>>>>>>>>> ARROW FUNCTIONS <<<<<<<<<<
+const calcAge3 = birthYear => 2022 - birthYear;     // single line function
+console.log(calcAge3(2016));
+
+// multiple lines function
+const yearsUntilRetirement = (birthYear, firstName) => {
+    const age = 2022 - birthYear;
+    const retirement = 65 - age;
+    // return retirement;
+    return `${firstName} retires in ${retirement} years`
+}
+console.log(yearsUntilRetirement(1995, "Aldair"));
