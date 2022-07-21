@@ -49,9 +49,28 @@ console.log(calcAge3(2016));
 
 // multiple lines function
 const yearsUntilRetirement = (birthYear, firstName) => {
-    const age = 2022 - birthYear;
-    const retirement = 65 - age;
-    // return retirement;
-    return `${firstName} retires in ${retirement} years`
+	const age = 2022 - birthYear;
+	const retirement = 65 - age;
+	// return retirement;
+	return `${firstName} retires in ${retirement} years`
 }
 console.log(yearsUntilRetirement(1995, "Aldair"));
+
+
+
+
+
+// >>>>>>>>>>> FUNCTIONS CALLING OTHER FUNCTIONS <<<<<<<<<<<
+const cutFruitPieces = (fruit) => {
+	return fruit * 4
+}
+
+const fruitProcessor2 = (apples, oranges) => {
+	const applePieces = cutFruitPieces(apples);
+	const orangesPieces = cutFruitPieces(oranges);
+
+	const juice = `Juice with ${applePieces} pieces of apples and ${orangesPieces} pieces of oranges.`;
+
+	return juice
+}
+console.log(fruitProcessor2(2, 3));
