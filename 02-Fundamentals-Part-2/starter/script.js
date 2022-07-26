@@ -74,3 +74,26 @@ const fruitProcessor2 = (apples, oranges) => {
 	return juice
 }
 console.log(fruitProcessor2(2, 3));
+
+
+
+
+
+
+
+// >>>>>>>>>>> ARRAYS <<<<<<<<<<<
+//Common syntax (literal syntax)
+const friends = ['Michael', 'Steven', 'Peter'];
+
+// declaration using Array functions
+const years = new Array(1991, 1984, 2008, 2020);
+
+console.log("friends array: ", friends);
+console.log(`First friends element: `, friends[0]);
+console.log(friends.length);	// result is 3
+console.log(friends[friends.length - 1]);	// print last array element
+
+// mutate the array element
+friends[2] = 'Jay';
+console.log(friends[2]);
+
