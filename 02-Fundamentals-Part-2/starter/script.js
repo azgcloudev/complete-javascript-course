@@ -130,7 +130,6 @@ console.log(friends2.includes('Peter'));
 
 
 
-
 // >>>>>>>>>> Objects <<<<<<<<<<
 const aldair = {
 	firstName: 'Aldair',
@@ -185,11 +184,16 @@ const aldairObject = {
 
 	calcAge: function () {
 		this.age = 2022 - this.birthYear;
-	}
+		return this.age;
+	},
 
 	// calcAge: function () {
 	// 	return 2022 - this.birthYear;
-	// }
+	// },
+
+	getSummary: function() {
+		return `${this.firstName} is a ${this.calcAge()}-year old ${this.job}, and he ${this.hasDriverLicense ? 'has a driver\'s license' : 'has no driver license'}`
+	}
 }
 
 // console.log(aldairObject['calcAge'](aldairObject.birthYear));
@@ -197,3 +201,6 @@ const aldairObject = {
 // console.log(aldairObject.calcAge());
 aldairObject.calcAge();
 console.log(`Age is`, aldairObject.age);
+
+
+console.log(aldairObject.getSummary());
