@@ -42,7 +42,6 @@ calcAge2(1998);
 
 
 
-
 // >>>>>>>>>> ARROW FUNCTIONS <<<<<<<<<<
 const calcAge3 = birthYear => 2022 - birthYear;     // single line function
 console.log(calcAge3(2016));
@@ -140,6 +139,7 @@ const aldair = {
 	job: 'Support engineer',
 	friends: ['Diego', 'Connie', 'Pancho']
 }
+
 console.log('\n*********************************');
 console.log(aldair)
 console.log(aldair.firstName); // dot notation have to use the property name
@@ -174,3 +174,26 @@ console.log(`${aldair.firstName} has ${aldair.friends.length} friends, and his b
 
 
 // >>>>>>>>>> OJECTS METHODS <<<<<<<<<<
+
+const aldairObject = {
+	firstName: 'Aldair',
+	lastName: 'Zamora',
+	birthYear: 1995,
+	job: 'Support engineer',
+	friends: ['Diego', 'Connie', 'Pancho'],
+	hasDriverLicense: true,
+
+	calcAge: function () {
+		this.age = 2022 - this.birthYear;
+	}
+
+	// calcAge: function () {
+	// 	return 2022 - this.birthYear;
+	// }
+}
+
+// console.log(aldairObject['calcAge'](aldairObject.birthYear));
+
+// console.log(aldairObject.calcAge());
+aldairObject.calcAge();
+console.log(`Age is`, aldairObject.age);
