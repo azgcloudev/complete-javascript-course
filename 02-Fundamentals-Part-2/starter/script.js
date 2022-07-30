@@ -204,3 +204,18 @@ console.log(`Age is`, aldairObject.age);
 
 
 console.log(aldairObject.getSummary());
+
+
+
+
+
+
+
+
+
+// >>>>>>>>>> FOR LOOP <<<<<<<<<<
+
+//loops run while condition is true
+for (let rep = 1; rep <= 10; rep = rep++) {
+	console.log(`Repetition number ${rep}!`);
+}
