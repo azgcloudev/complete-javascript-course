@@ -191,7 +191,7 @@ const aldairObject = {
 	// 	return 2022 - this.birthYear;
 	// },
 
-	getSummary: function() {
+	getSummary: function () {
 		return `${this.firstName} is a ${this.calcAge()}-year old ${this.job}, and he ${this.hasDriverLicense ? 'has a driver\'s license' : 'has no driver license'}`
 	}
 }
