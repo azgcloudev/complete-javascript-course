@@ -216,6 +216,20 @@ console.log(aldairObject.getSummary());
 // >>>>>>>>>> FOR LOOP <<<<<<<<<<
 
 //loops run while condition is true
-for (let rep = 1; rep <= 10; rep = rep++) {
+for (let rep = 1; rep <= 10; rep++) {
 	console.log(`Repetition number ${rep}!`);
+}
+
+
+console.log(`\n^^^^^For Loop using 'continue'^^^^^`);
+const variableArray = ['name1', 'name', 21, ['asda', 'asdasd'], true, 'last item'];
+for (let i = 0; i < variableArray.length; i++) {
+	if (typeof variableArray[i] !== 'string') continue;
+	console.log(variableArray[i]);
+}
+
+console.log(`\n^^^^^For Loop using 'continue'^^^^^`);
+for (let i = 0; i < variableArray.length; i++) {
+	if (typeof variableArray[i] === 'number') break;
+	console.log(variableArray[i]);
 }
