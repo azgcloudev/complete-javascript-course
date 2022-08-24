@@ -233,3 +233,29 @@ for (let i = 0; i < variableArray.length; i++) {
 	if (typeof variableArray[i] === 'number') break;
 	console.log(variableArray[i]);
 }
+
+
+
+
+
+
+
+
+
+
+
+// >>>>>>>>>> WHILE LOOP <<<<<<<<<<
+let rep = 1;
+while (rep <= 10) {
+	console.log(`While: Lifting weights repetition ${rep}`);
+	rep++;
+}
+
+let dice = Math.floor(Math.random() * 6 + 1);
+console.log(dice);
+
+while (dice != 6) {
+	console.log(`You rolled a ${dice}`);
+	dice = Math.floor(Math.random() * 6 + 1);
+	if (dice === 6) console.log('Loop is about to end...');
+}
