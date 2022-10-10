@@ -42,7 +42,6 @@ calcAge2(1998);
 
 
 
-
 // >>>>>>>>>> ARROW FUNCTIONS <<<<<<<<<<
 const calcAge3 = birthYear => 2022 - birthYear;     // single line function
 console.log(calcAge3(2016));
@@ -97,3 +96,166 @@ console.log(friends[friends.length - 1]);	// print last array element
 friends[2] = 'Jay';
 console.log(friends[2]);
 
+
+
+
+// >>>>>>>>>>> ARRAYS methods <<<<<<<<<<<<
+const friends2 = ['Michael', 'Steven', 'Peter'];
+
+// arr.push()	--> add elements to the end of the array
+// push return the length of the array
+let newArrLen = friends2.push('Jay');
+console.log('push() return: ', newArrLen);
+
+// add elements to the beginning of the array shift()
+friends2.unshift('John');
+console.log('friends2', friends2);
+
+// remove the last element from the array pop()
+// returns the element deleted
+console.log(friends2.pop());
+
+//remove the first element of an array shift()
+friends2.shift();
+console.log(friends2);
+
+// of an array element
+console.log(friends2.indexOf('Steven'));
+console.log(friends2.indexOf('Aldair')); // if the search cannot find the value will return -1
+
+// if the value is or not in the array includes()
+console.log(friends2.includes('Peter'));
+
+
+
+
+
+// >>>>>>>>>> Objects <<<<<<<<<<
+const aldair = {
+	firstName: 'Aldair',
+	lastName: 'Zamora',
+	age: 2022 - 1995,
+	job: 'Support engineer',
+	friends: ['Diego', 'Connie', 'Pancho']
+}
+
+console.log('\n*********************************');
+console.log(aldair)
+console.log(aldair.firstName); // dot notation have to use the property name
+console.log(aldair['lastName']); // bracket uses statements
+
+let interestedIn = prompt("Type one option only between: firstName, lastName, age, job or friends");
+
+if (aldair[interestedIn]) {
+	console.log(aldair[interestedIn]);
+} else {
+	interestedIn = prompt('Please enter the correct value. Type one option only between: firstName, lastName, age, job or friends');
+}
+
+
+// you can get undefined if try to access a key from an object that does not exists
+
+//add a new key pair value
+aldair.location = 'Costa Rica';
+aldair['github'] = 'azgcloudev';
+
+// ---- challange ----
+/*
+"Aldair has 3 friends, and his best friend is called Diego"
+
+Try to console the phrase but use values from an object
+*/
+
+console.log(`${aldair.firstName} has ${aldair.friends.length} friends, and his best friend is called ${aldair.friends[0]}.`);
+
+
+
+
+
+// >>>>>>>>>> OJECTS METHODS <<<<<<<<<<
+
+const aldairObject = {
+	firstName: 'Aldair',
+	lastName: 'Zamora',
+	birthYear: 1995,
+	job: 'Support engineer',
+	friends: ['Diego', 'Connie', 'Pancho'],
+	hasDriverLicense: true,
+
+	calcAge: function () {
+		this.age = 2022 - this.birthYear;
+		return this.age;
+	},
+
+	// calcAge: function () {
+	// 	return 2022 - this.birthYear;
+	// },
+
+	getSummary: function () {
+		return `${this.firstName} is a ${this.calcAge()}-year old ${this.job}, and he ${this.hasDriverLicense ? 'has a driver\'s license' : 'has no driver license'}`
+	}
+}
+
+// console.log(aldairObject['calcAge'](aldairObject.birthYear));
+
+// console.log(aldairObject.calcAge());
+aldairObject.calcAge();
+console.log(`Age is`, aldairObject.age);
+
+
+console.log(aldairObject.getSummary());
+
+
+
+
+
+
+
+
+
+// >>>>>>>>>> FOR LOOP <<<<<<<<<<
+
+//loops run while condition is true
+for (let rep = 1; rep <= 10; rep++) {
+	console.log(`Repetition number ${rep}!`);
+}
+
+
+console.log(`\n^^^^^For Loop using 'continue'^^^^^`);
+const variableArray = ['name1', 'name', 21, ['asda', 'asdasd'], true, 'last item'];
+for (let i = 0; i < variableArray.length; i++) {
+	if (typeof variableArray[i] !== 'string') continue;
+	console.log(variableArray[i]);
+}
+
+console.log(`\n^^^^^For Loop using 'continue'^^^^^`);
+for (let i = 0; i < variableArray.length; i++) {
+	if (typeof variableArray[i] === 'number') break;
+	console.log(variableArray[i]);
+}
+
+
+
+
+
+
+
+
+
+
+
+// >>>>>>>>>> WHILE LOOP <<<<<<<<<<
+let rep = 1;
+while (rep <= 10) {
+	console.log(`While: Lifting weights repetition ${rep}`);
+	rep++;
+}
+
+let dice = Math.floor(Math.random() * 6 + 1);
+console.log(dice);
+
+while (dice != 6) {
+	console.log(`You rolled a ${dice}`);
+	dice = Math.floor(Math.random() * 6 + 1);
+	if (dice === 6) console.log('Loop is about to end...');
+}
