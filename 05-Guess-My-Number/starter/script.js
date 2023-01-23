@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 'use strict';
 
 // generate secret number from 1 to 20
@@ -61,24 +60,3 @@ document.querySelector('.again').addEventListener('click', function () {
     document.querySelector('.guess').value = '';
     document.querySelector('.message').textContent = 'Start guessing...';
 });
-=======
-'use strict';
-/*
-console.log(document.querySelector('.message').textContent);
-
-document.querySelector('.message').textContent = 'Correct Number';
-
-document.querySelector('.number').textContent = 21;
-
-document.querySelector('.guess').value = 23;
-*/
-
-document.querySelector('.check').addEventListener('click', function () {
-    let message = document.querySelector('.message');
-	let guess = Number(document.querySelector('.guess').value);
-
-	if (!guess) {
-		message.textContent = 'No Number added';
-	}
-});
->>>>>>> 135f394b7d5bf04a185a2c7644255d129fbc3fb3
