@@ -22,6 +22,20 @@ let isPlaying = true;
 let currentScore = 0;
 let activePlayer = 0;
 
+const init = () => {
+  scores[0] = 0;
+  scores[1] = 0;
+  isPlaying = true;
+  currentScore = 0;
+  activePlayer = 0;
+
+  document.querySelector('.dice').classList.add('hidden');
+  player0El.classList.add('player--active');
+  player1El.classList.remove('player--active');
+  player0El.classList.remove('player--winner');
+  player1El.classList.remove('player--winner');
+};
+
 const switchPlayer = () => {
   currentScore = 0;
   document.querySelector(`#current--${activePlayer}`).textContent =
@@ -72,7 +86,7 @@ btnHold.addEventListener('click', () => {
       scores[activePlayer];
 
     // 2. if score >= than 100
-    if (scores[activePlayer] >= 20) {
+    if (scores[activePlayer] >= 100) {
       // player wins
       isPlaying = false;
       document
@@ -88,12 +102,7 @@ btnHold.addEventListener('click', () => {
 
 // reset the game
 btnNew.addEventListener('click', () => {
-  activePlayer = 0;
   clearScore(score0El, current0El);
   clearScore(score1El, current1El);
-  document.querySelector('.dice').classList.add('hidden');
-  player0El.classList.add('player--active');
-  player1El.classList.remove('player--active');
-  player0El.classList.remove('player--winner');
-  player1El.classList.remove('player--winner');
+  init();
 });
